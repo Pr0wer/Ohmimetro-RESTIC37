@@ -5,6 +5,11 @@
 #define WIDTH 128
 #define HEIGHT 64
 
+#define I2C_PORT i2c1
+#define I2C_SDA 14
+#define I2C_SCL 15
+#define endereco 0x3C
+
 typedef enum {
   SET_CONTRAST = 0x81,
   SET_ENTIRE_ON = 0xA4,
@@ -34,6 +39,7 @@ typedef struct {
   uint8_t port_buffer[2];
 } ssd1306_t;
 
+void ssd1306_i2c_init(ssd1306_t *ssd);
 void ssd1306_init(ssd1306_t *ssd, uint8_t width, uint8_t height, bool external_vcc, uint8_t address, i2c_inst_t *i2c);
 void ssd1306_config(ssd1306_t *ssd);
 void ssd1306_command(ssd1306_t *ssd, uint8_t command);
