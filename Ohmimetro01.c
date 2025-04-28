@@ -10,8 +10,8 @@
 #define ADC_PIN 28 // GPIO para o voltímetro
 #define Botao_A 5  // GPIO para botão A
 
-int R_conhecido = 10000;   // Resistor de 10k ohm
-float R_x = 73000.0f;           // Resistor desconhecido
+int R_conhecido = 10000;   // Resistor conhecido
+float R_x = 0.0f;           // Resistor desconhecido
 float ADC_VREF = 3.31;     // Tensão de referência do ADC
 int ADC_RESOLUTION = 4095; // Resolução do ADC (12 bits)
 
